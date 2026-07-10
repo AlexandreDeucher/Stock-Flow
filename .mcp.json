@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "obsidian": {
+      "command": "sh",
+      "args": [
+        "-c",
+        "npx -y @modelcontextprotocol/server-filesystem \"$(git rev-parse --show-toplevel)/obsidian\""
+      ]
+    }
+  }
+}
