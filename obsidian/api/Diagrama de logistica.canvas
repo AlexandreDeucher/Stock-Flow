@@ -1,0 +1,38 @@
+{
+	"nodes":[
+		{"id":"manager-note","type":"file","file":"api/Manager.md","x":1350,"y":-450,"width":260,"height":140,"color":"1"},
+		{"id":"cashier-note","type":"file","file":"api/Cashier.md","x":1700,"y":-450,"width":260,"height":140,"color":"1"},
+		{"id":"order_items","type":"text","text":"### order_items\n- **PK** id\n- *FK* order_id\n- *FK* product_id\n- quantity\n- unit_price","x":900,"y":-50,"width":280,"height":200,"color":"4"},
+		{"id":"categories","type":"text","text":"### categories\n- **PK** id\n- name","x":0,"y":400,"width":260,"height":110,"color":"6"},
+		{"id":"brands","type":"text","text":"### brands\n- **PK** id\n- name","x":0,"y":650,"width":260,"height":110,"color":"6"},
+		{"id":"products","type":"text","text":"### products\n- **PK** id\n- *FK* category_id\n- *FK* brand_id\n- *FK* unit_id\n- name\n- quantity\n- min_quantity\n- cost_price\n- sale_price\n- description\n- barcode\n- sku\n- active\n- created_at\n- updated_at","x":450,"y":250,"width":280,"height":460,"color":"4"},
+		{"id":"inventory_transactions","type":"text","text":"### inventory_transactions\n- **PK** id\n- *FK* user_id\n- *FK* unit_id\n- *FK* product_id\n- movement_type\n- quantity\n- created_at","x":900,"y":350,"width":280,"height":260,"color":"4"},
+		{"id":"users","type":"text","text":"### users\n- **PK** id\n- *FK* unit_id\n- name\n- email\n- role","x":1500,"y":-150,"width":260,"height":200,"color":"1"},
+		{"id":"orders","type":"text","text":"### orders\n- **PK** id\n- *FK* user_id\n- *FK* unit_id\n- status\n- order_type","x":1500,"y":250,"width":260,"height":200,"color":"4"},
+		{"id":"units","type":"text","text":"### units\n- **PK** id\n- *FK* city_id\n- *FK* state_id\n- *FK* country_id\n- name\n- cnpj\n- cep\n- street\n- street_number","x":1950,"y":100,"width":280,"height":320,"color":"5"},
+		{"id":"cities","type":"text","text":"### cities\n- **PK** id\n- name\n- ibge_code\n- *FK* state_id","x":2400,"y":0,"width":260,"height":180,"color":"5"},
+		{"id":"states","type":"text","text":"### states\n- **PK** id\n- *FK* country_id\n- name\n- abbreviation\n- ibge_code","x":2400,"y":350,"width":260,"height":200,"color":"5"},
+		{"id":"countries","type":"text","text":"### countries\n- **PK** id\n- name\n- abbreviation\n- ibge_code","x":2400,"y":700,"width":260,"height":180,"color":"5"}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"products","fromSide":"left","toNode":"categories","toSide":"right","label":"category_id"},
+		{"id":"e2","fromNode":"products","fromSide":"left","toNode":"brands","toSide":"right","label":"brand_id"},
+		{"id":"e3","fromNode":"products","fromSide":"right","toNode":"units","toSide":"left","label":"unit_id"},
+		{"id":"e4","fromNode":"inventory_transactions","fromSide":"left","toNode":"products","toSide":"right","label":"product_id"},
+		{"id":"e5","fromNode":"inventory_transactions","fromSide":"right","toNode":"users","toSide":"bottom","label":"user_id"},
+		{"id":"e6","fromNode":"inventory_transactions","fromSide":"right","toNode":"units","toSide":"left","label":"unit_id"},
+		{"id":"e7","fromNode":"order_items","fromSide":"left","toNode":"products","toSide":"top","label":"product_id"},
+		{"id":"e8","fromNode":"order_items","fromSide":"right","toNode":"orders","toSide":"left","label":"order_id"},
+		{"id":"e9","fromNode":"orders","fromSide":"top","toNode":"users","toSide":"bottom","label":"user_id"},
+		{"id":"e10","fromNode":"orders","fromSide":"right","toNode":"units","toSide":"left","label":"unit_id"},
+		{"id":"e11","fromNode":"users","fromSide":"right","toNode":"units","toSide":"left","label":"unit_id"},
+		{"id":"e12","fromNode":"units","fromSide":"right","toNode":"cities","toSide":"left","label":"city_id"},
+		{"id":"e13","fromNode":"units","fromSide":"right","toNode":"states","toSide":"left","label":"state_id"},
+		{"id":"e14","fromNode":"units","fromSide":"right","toNode":"countries","toSide":"left","label":"country_id"},
+		{"id":"e15","fromNode":"states","fromSide":"bottom","toNode":"countries","toSide":"top","label":"country_id"},
+		{"id":"e16","fromNode":"cities","fromSide":"bottom","toNode":"states","toSide":"top","label":"state_id"},
+		{"id":"e17","fromNode":"manager-note","fromSide":"bottom","toNode":"users","toSide":"top","label":"role = manager"},
+		{"id":"e18","fromNode":"cashier-note","fromSide":"bottom","toNode":"users","toSide":"top","label":"role = cashier"},
+		{"id":"94e808b60b5cec13","fromNode":"manager-note","fromSide":"right","toNode":"cashier-note","toSide":"left"}
+	]
+}
