@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   enumerize :role, in: { cashier: 1, manager: 2 }
+
+  validates :role, presence: true
 end
