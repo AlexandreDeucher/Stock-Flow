@@ -40,11 +40,11 @@ module Managers
     end
 
     def create_params
-      params.require(:user).permit(:email, :password, :password_confirmation, :role)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :role)
     end
 
     def update_params
-      params.require(:user).permit(:email, :role)
+      params.require(:user).permit(:name, :email, :role)
     end
   end
 end
