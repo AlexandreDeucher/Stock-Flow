@@ -1,0 +1,15 @@
+meta {
+  name: Sign Out
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{base_url}}/users/sign_out
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

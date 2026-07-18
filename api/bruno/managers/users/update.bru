@@ -1,0 +1,29 @@
+meta {
+  name: Update User
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{base_url}}/managers/users/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: 1
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "user": {
+      "name": "John Doe",
+      "email": "user@example.com",
+      "role": "manager"
+    }
+  }
+}

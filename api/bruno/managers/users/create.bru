@@ -1,0 +1,28 @@
+meta {
+  name: Create User
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{base_url}}/managers/users
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "user": {
+      "name": "John Doe",
+      "email": "user@example.com",
+      "password": "password",
+      "password_confirmation": "password",
+      "role": "cashier"
+    }
+  }
+}
+​

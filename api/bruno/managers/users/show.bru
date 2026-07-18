@@ -1,0 +1,20 @@
+meta {
+  name: Show User
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/managers/users/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 1
+}
+
+auth:bearer {
+  token: {{token}}
+}
+​

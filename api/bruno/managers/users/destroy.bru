@@ -1,0 +1,19 @@
+meta {
+  name: Destroy User
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{base_url}}/managers/users/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 1
+}
+
+auth:bearer {
+  token: {{token}}
+}
