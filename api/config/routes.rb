@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users, skip: [:registrations]
+  devise_for :users, skip: [ :registrations ],
+                     controllers: { sessions: "users/sessions" },
+                     defaults: { format: :json }
 
   namespace :managers do
     resources :users
