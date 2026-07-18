@@ -59,3 +59,5 @@ gem "enumerize"
 
 # Alba is a JSON serializer for Ruby, JRuby, and TruffleRuby.
 gem "alba"
+
+gem "devise-jwt", "~> 0.13.0"
