@@ -1,0 +1,30 @@
+meta {
+  name: Update Unit
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{base_url}}/managers/units/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: 1
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "unit": {
+      "name": "Loja Centro",
+      "cep": "90010000",
+      "street": "Rua dos Andradas",
+      "street_number": "100"
+    }
+  }
+}

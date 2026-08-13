@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   namespace :managers do
     resources :users
+    resources :units
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
