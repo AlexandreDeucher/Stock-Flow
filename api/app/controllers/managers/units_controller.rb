@@ -1,6 +1,7 @@
 module Managers
   class UnitsController < ApplicationController
     before_action :set_unit, only: %i[show update destroy]
+    before_action :validate_current_user_are_manager?
 
     def index
       render json: UnitSerializer.new(Unit.all).serialize
@@ -37,6 +38,10 @@ module Managers
 
     def set_unit
       @unit = Unit.find(params[:id])
+    end
+
+    def validate_current_user_are_manager?
+      @current_user.role.manager?
     end
 
     def create_and_update_params
