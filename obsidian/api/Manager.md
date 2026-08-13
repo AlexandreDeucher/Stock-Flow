@@ -23,4 +23,5 @@ O manager e o [[Cashier]] são registros da mesma tabela `users` — não existe
 ## Ver também
 
 - [[Cashier]] — colaborador vinculado a uma única unidade, cadastrado pelo manager.
+- [[User]] — model de autenticação (JWT) do qual o manager é um registro.
 - [[Diagrama de logistica.svg]] — diagrama do banco de dados (tabela `users`).

@@ -20,4 +20,5 @@ O cashier e o [[Manager]] são registros da mesma tabela `users` — não existe
 ## Ver também
 
 - [[Manager]] — cadastra e gerencia os cashiers, com visão de todas as unidades.
+- [[User]] — model de autenticação (JWT) do qual o cashier é um registro.
 - [[Diagrama de logistica.svg]] — diagrama do banco de dados (tabela `users`).
